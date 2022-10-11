@@ -10350,8 +10350,8 @@ bool LoopVectorizePass::processLoop(Loop *L) {
         return OptimizationRemarkAnalysisAliasing(
                    DEBUG_TYPE, "CantReorderMemOps", L->getStartLoc(),
                    L->getHeader())
-               << "loop not vectorized: cannot prove it is safe to reorder "
-                  "memory operations";
+               << "loop not vectorized: it is not profitable to reorder memory "
+                  "operations with runtime checks";
       });
       LLVM_DEBUG(dbgs() << "LV: Too many memory checks needed.\n");
       Hints.emitRemarkWithHints();
